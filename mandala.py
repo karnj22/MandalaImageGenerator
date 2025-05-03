@@ -6,9 +6,9 @@ from io import BytesIO
 # Set your OpenAI API key
 openai.api_key = st.secrets["OPENAI_API_KEY"]
 
-st.title("🎨 Mandala Art Generator")
+st.title("🎨 Mandala Art Generator 🖌️")
 
-st.write("Enter a **single word** below. I will create a **black and white Mandala** inspired by it!")
+st.write("Enter a **single word** below. I will create a **colourful Mandala** inspired by it!")
 
 # User input
 word = st.text_input("Enter one word:", max_chars=20)
@@ -18,7 +18,7 @@ if st.button("Generate Mandala"):
         st.error("Please enter a valid word.")
     else:
         with st.spinner("Creating your Mandala..."):
-            prompt = f"Create a detailed, intricate black and white Mandala art inspired by the word '{word}'. The Mandala should be symmetric, highly artistic, and purely black and white, no colors."
+            prompt = f"Create a detailed, intricate colourful Mandala art inspired by the word '{word}'. The Mandala should be symmetric, highly artistic, white in background, and colourful."
 
             try:
                 response = openai.images.generate(
